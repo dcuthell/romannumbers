@@ -1,7 +1,69 @@
+
+function tenPlace(userInput){
+  var output = "";
+  if(userInput === "1"){
+    output = "X";
+  }else if(userInput === "2"){
+    output = "XX";
+  }else if(userInput === "3"){
+    output = "XXX";
+  }else if(userInput === "4"){
+    output = "XL";
+  }else if(userInput === "5"){
+    output = "L";
+  }else if(userInput === "6"){
+    output = "LX";
+  }else if(userInput === "7"){
+    output = "LXX";
+  }else if(userInput === "8"){
+    output = "LXXX";
+  }else if(userInput === "9"){
+    output = "XC";
+  }else{
+    alert("ERROR in TENS");
+  }
+  return output;
+}
+
+function onePlace(userInput){
+  var output = "";
+  if(userInput === "1"){
+    output = "I";
+  }else if(userInput === "2"){
+    output = "II";
+  }else if(userInput === "3"){
+    output = "III";
+  }else if(userInput === "4"){
+    output = "IV";
+  }else if(userInput === "5"){
+    output = "V";
+  }else if(userInput === "6"){
+    output = "VI";
+  }else if(userInput === "7"){
+    output = "VII";
+  }else if(userInput === "8"){
+    output = "VIII";
+  }else if(userInput === "9"){
+    output = "IX";
+  }else{
+    alert("ERROR in ONES");
+  }
+  return output;
+}
+
 function toRoman(userInput){
-  var output = userInput.length;
-  if((userInput<= 0) || (userInput >= 4000)){
+  var length = userInput.length;
+  var output = "";
+  if((userInput<= 0) || (userInput >= 4000) || isNaN(userInput)){
     alert("Invalid number, try again");
+  }
+
+  if(length === 1){
+    output = onePlace(userInput);
+  }else if(length === 2){
+    output = tenPlace(userInput[0]) + onePlace(userInput[1]);
+  }else{
+    alert("too much");
   }
   return output;
 }
