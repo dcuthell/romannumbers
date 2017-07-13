@@ -1,4 +1,28 @@
-
+function hunPlace(userInput){
+  var output = "";
+  if(userInput === "1"){
+    output = "C";
+  }else if(userInput === "2"){
+    output = "CC";
+  }else if(userInput === "3"){
+    output = "CCC";
+  }else if(userInput === "4"){
+    output = "CD";
+  }else if(userInput === "5"){
+    output = "D";
+  }else if(userInput === "6"){
+    output = "DC";
+  }else if(userInput === "7"){
+    output = "DCC";
+  }else if(userInput === "8"){
+    output = "DCCC";
+  }else if(userInput === "9"){
+    output = "CM";
+  }else{
+    output = "";
+  }
+  return output;
+}
 function tenPlace(userInput){
   var output = "";
   if(userInput === "1"){
@@ -20,7 +44,7 @@ function tenPlace(userInput){
   }else if(userInput === "9"){
     output = "XC";
   }else{
-    alert("ERROR in TENS");
+    output = "";
   }
   return output;
 }
@@ -46,7 +70,7 @@ function onePlace(userInput){
   }else if(userInput === "9"){
     output = "IX";
   }else{
-    alert("ERROR in ONES");
+    output = "";
   }
   return output;
 }
@@ -62,6 +86,8 @@ function toRoman(userInput){
     output = onePlace(userInput);
   }else if(length === 2){
     output = tenPlace(userInput[0]) + onePlace(userInput[1]);
+  }else if(length === 3){
+    output = hunPlace(userInput[0]) + tenPlace(userInput[1]) + onePlace(userInput[2]);
   }else{
     alert("too much");
   }
