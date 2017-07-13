@@ -1,5 +1,8 @@
 function toRoman(userInput){
-  var output = userInput;
+  var output = userInput.length;
+  if((userInput<= 0) || (userInput >= 4000)){
+    alert("Invalid number, try again");
+  }
   return output;
 }
 
