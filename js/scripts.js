@@ -1,3 +1,16 @@
+function thouPlace(userInput){
+  var output = "";
+  if(userInput === "1"){
+    output = "M";
+  }else if(userInput === "2"){
+    output = "MM";
+  }else if(userInput === "3"){
+    output = "MMM";
+  }else{
+    alert("too much");
+  }
+  return output;
+}
 function hunPlace(userInput){
   var output = "";
   if(userInput === "1"){
@@ -88,6 +101,8 @@ function toRoman(userInput){
     output = tenPlace(userInput[0]) + onePlace(userInput[1]);
   }else if(length === 3){
     output = hunPlace(userInput[0]) + tenPlace(userInput[1]) + onePlace(userInput[2]);
+  }else if(length === 4){
+    output = thouPlace(userInput[0]) + hunPlace(userInput[1]) + tenPlace(userInput[2]) + onePlace(userInput[3]);
   }else{
     alert("too much");
   }
